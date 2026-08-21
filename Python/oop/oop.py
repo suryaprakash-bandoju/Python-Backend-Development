@@ -20,7 +20,7 @@ class Car:
         return self.speed
 
     def honk(self):
-        return "Beep beep! I'm a Toyota!"
+        return f"Beep beep! I'm a {self.brand}!"
 
 car1 = Car("Toyota", "Corolla", 2023, "Red")
 car1.accelerate(50)
@@ -28,3 +28,6 @@ print(car1.get_speed())  # Should print 50
 car1.brake(20)
 print(car1.get_speed())  # Should print 30
 print(car1.honk())  # Should print "Beep beep! I'm a Toyota!"
+
+honda = Car("Honda", "Civic", 2023, "Blue")
+print(honda.honk())

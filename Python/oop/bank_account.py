@@ -5,12 +5,17 @@ class BankAccount:
         self.balance = balance
     
     def deposit(self, amount):
-        if amount > 0:
+        if amount <= 0:
+            raise ValueError ("Deposit amount must be positive")
+        else:
             self.balance += amount
         return self.balance
     def withdraw(self, amount):
-        if self.balance >= amount:
-            self.balance -= amount
+        if amount <= 0:
+            raise ValueError("Withdraw amount must be positive")
+        if amount > self.balance:
+            raise ValueError("Insufficient funds")
+        self.balance -= amount
         return self.balance
     def get_balance(self):
         return self.balance
